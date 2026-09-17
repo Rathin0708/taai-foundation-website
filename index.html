@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தாய் பவுண்டேஷன் | போதை மறுவாழ்வு மையம் | Aruppukkottai</title>
+    <meta name="description" content="தாய் பவுண்டேஷன் - அருப்புக்கோட்டையில் போதை மறுவாழ்வு மையம். போதைப் பழக்கத்திலிருந்து மீள உதவும் மையம்.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-tamil@5.0.0/index.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.0/index.min.css" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-900: #0d4a2e;
+            --green-700: #15703f;
+            --green-600: #1a8a4e;
+            --green-500: #22a85e;
+            --green-100: #e6f7ed;
+            --green-50: #f0faf4;
+            --purple-700: #5b21b6;
+            --purple-600: #7c3aed;
+            --purple-100: #ede9fe;
+            --purple-50: #f5f3ff;
+            --orange-500: #f59e0b;
+            --orange-100: #fef3c7;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Noto Sans Tamil', 'Inter', system-ui, sans-serif;
+            color: var(--gray-900);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--green-900);
+        }
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo-text-main {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--green-900);
+        }
+        .logo-text-sub {
+            font-size: 10px;
+            color: var(--gray-500);
+            letter-spacing: 0.5px;
+        }
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .nav-desktop a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .nav-desktop a:hover {
+            background: var(--green-50);
+            color: var(--green-700);
+        }
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--green-700);
+            color: white;
+            padding: 9px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-call:hover { background: var(--green-900); transform: translateY(-1px); }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--gray-700);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a {
+            display: block;
+            padding: 14px 16px;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .mobile-menu a:hover { background: var(--green-50); color: var(--green-700); }
+        .mobile-menu .mobile-cta {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding-top: 70px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, var(--green-50) 0%, var(--white) 40%, var(--purple-50) 100%);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(26,138,78,0.06) 0%, transparent 70%);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124,58,237,0.04) 0%, transparent 70%);
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green-100);
+            color: var(--green-700);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green-500);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            color: var(--green-900);
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--green-600), var(--purple-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--gray-500);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .hero-tagline {
+            font-size: clamp(15px, 2vw, 18px);
+            color: var(--gray-700);
+            margin-bottom: 32px;
+            line-height: 1.8;
+            border-left: 3px solid var(--green-500);
+            padding-left: 16px;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green-700);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--green-900); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--green-700);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid var(--green-100);
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: var(--green-500); background: var(--green-50); }
+        .btn-outline-purple {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--purple-700);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid var(--purple-100);
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+        .btn-outline-purple:hover { border-color: var(--purple-600); background: var(--purple-50); }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-num {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--green-700);
+        }
+        .hero-stat-label {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-illustration {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 80px 20px;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green-700);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--green-500);
+            border-radius: 2px;
+        }
+        .section-title {
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 800;
+            color: var(--green-900);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .section-desc {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--white); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text p {
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .about-value {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px;
+            background: var(--green-50);
+            border-radius: var(--radius);
+        }
+        .about-value-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--green-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+        .about-value h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 2px;
+        }
+        .about-value p {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin: 0;
+            line-height: 1.5;
+        }
+        .about-visual {
+            position: relative;
+        }
+        .about-card {
+            background: linear-gradient(135deg, var(--green-700), var(--green-900));
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        .about-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .about-card p {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .mission-vision-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .mv-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+        .mv-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mv-card p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--gray-50); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--green-100);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green-500), var(--purple-600));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .service-card:hover::before { opacity: 1; }
+        .service-num {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--green-100);
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--green-50);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        .service-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== JOURNEY ===== */
+        .journey { background: var(--white); }
+        .journey-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            position: relative;
+        }
+        .journey-step {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        .journey-step-num {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-600), var(--green-700));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 2;
+        }
+        .journey-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 58px;
+            right: -10%;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green-300, #86efac), var(--green-100));
+            z-index: 1;
+        }
+        .journey-step h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 8px;
+        }
+        .journey-step p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ===== FACILITIES ===== */
+        .facilities { background: var(--green-50); }
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .facility-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .facility-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .facility-img {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .facility-img-1 { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+        .facility-img-2 { background: linear-gradient(135deg, #e8eaf6, #c5cae9); }
+        .facility-img-3 { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+        .facility-img-4 { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
+        .facility-img-5 { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
+        .facility-img-6 { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+        .facility-img-7 { background: linear-gradient(135deg, #e1f5fe, #b3e5fc); }
+        .facility-img-8 { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
+        .facility-info {
+            padding: 16px;
+        }
+        .facility-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 4px;
+        }
+        .facility-info p {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ===== ACTIVITIES ===== */
+        .activities { background: var(--white); }
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .activity-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid var(--gray-100);
+        }
+        .activity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .activity-img {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            position: relative;
+        }
+        .activity-img-a1 { background: linear-gradient(135deg, var(--green-100), var(--green-50)); }
+        .activity-img-a2 { background: linear-gradient(135deg, var(--purple-100), var(--purple-50)); }
+        .activity-img-a3 { background: linear-gradient(135deg, var(--orange-100), #fffbeb); }
+        .activity-body {
+            padding: 20px;
+        }
+        .activity-tag {
+            display: inline-block;
+            background: var(--green-100);
+            color: var(--green-700);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .activity-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 8px;
+        }
+        .activity-body p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== WHY TRUST ===== */
+        .trust { background: linear-gradient(160deg, var(--green-900), #0a3d24); color: white; }
+        .trust .section-label { color: var(--green-100); }
+        .trust .section-label::before { background: var(--green-100); }
+        .trust .section-title { color: white; }
+        .trust .section-desc { color: rgba(255,255,255,0.7); }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .trust-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all 0.3s;
+        }
+        .trust-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-2px);
+        }
+        .trust-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .trust-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .trust-card p {
+            font-size: 13px;
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        /* ===== AWARENESS ===== */
+        .awareness { background: var(--gray-50); }
+        .awareness-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .awareness-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        .awareness-card:hover {
+            border-color: var(--green-100);
+            box-shadow: var(--shadow-md);
+        }
+        .awareness-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .awareness-icon-1 { background: var(--green-100); }
+        .awareness-icon-2 { background: var(--purple-100); }
+        .awareness-icon-3 { background: var(--orange-100); }
+        .awareness-icon-4 { background: #dbeafe; }
+        .awareness-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 8px;
+        }
+        .awareness-card p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== FAQ ===== */
+        .faq { background: var(--white); }
+        .faq-list {
+            max-width: 800px;
+        }
+        .faq-item {
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .faq-item.active { border-color: var(--green-200, #a7f3d0); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-900);
+            text-align: left;
+            font-family: inherit;
+            line-height: 1.5;
+        }
+        .faq-question:hover { background: var(--gray-50); }
+        .faq-arrow {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 16px;
+            color: var(--green-600);
+        }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.8;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact { background: var(--green-50); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .contact-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+        .contact-card:hover { box-shadow: var(--shadow-md); }
+        .contact-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--green-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .contact-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 4px;
+        }
+        .contact-card p, .contact-card a {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        .contact-card a:hover { color: var(--green-700); }
+        .contact-form {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-md);
+        }
+        .contact-form h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 6px;
+        }
+        .contact-form .form-desc {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 6px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--gray-900);
+            transition: all 0.2s;
+            background: var(--white);
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--green-500);
+            box-shadow: 0 0 0 3px rgba(34,168,94,0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-privacy {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .form-privacy svg { flex-shrink: 0; margin-top: 2px; }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--green-700);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-submit:hover { background: var(--green-900); }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .form-success.show { display: block; }
+        .form-success .check-circle {
+            width: 64px;
+            height: 64px;
+            background: var(--green-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 32px;
+        }
+        .form-success h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 8px;
+        }
+        .form-success p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* Map */
+        .map-section {
+            background: var(--white);
+            padding: 0 20px 80px;
+        }
+        .map-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 300px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid var(--gray-300);
+        }
+        .map-placeholder {
+            text-align: center;
+            color: var(--gray-500);
+        }
+        .map-placeholder svg { margin-bottom: 12px; }
+        .map-placeholder p { font-size: 14px; }
+        .map-placeholder a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            color: var(--green-700);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .map-placeholder a:hover { text-decoration: underline; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--green-900);
+            color: white;
+            padding: 60px 20px 20px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+        .footer h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: white; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom p {
+            font-size: 13px;
+            opacity: 0.5;
+        }
+        .footer-reg {
+            font-size: 12px;
+            opacity: 0.5;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ===== MOBILE STICKY CTA ===== */
+        .mobile-sticky {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 998;
+            background: var(--white);
+            border-top: 1px solid var(--gray-100);
+            padding: 8px 12px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+        }
+        .mobile-sticky-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+        .mobile-sticky-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 8px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .msb-call {
+            background: var(--green-700);
+            color: white;
+        }
+        .msb-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        .msb-map {
+            background: var(--gray-100);
+            color: var(--gray-700);
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .hero-tagline { border-left: none; padding-left: 0; text-align: center; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-visual { order: -1; }
+            .hero-illustration { max-width: 320px; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .journey-steps { grid-template-columns: repeat(2, 1fr); }
+            .journey-step:not(:last-child)::after { display: none; }
+            .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop { display: none; }
+            .header-cta .btn-call { display: none; }
+            .hamburger { display: block; }
+            .mobile-sticky { display: block; }
+            body { padding-bottom: 70px; }
+            .section { padding: 60px 16px; }
+            .hero { min-height: auto; padding-top: 90px; }
+            .hero-inner { padding: 30px 16px 50px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .journey-steps { grid-template-columns: 1fr; }
+            .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+            .activities-grid { grid-template-columns: 1fr; }
+            .awareness-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .about-values { grid-template-columns: 1fr; }
+            .mission-vision-cards { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons a { width: 100%; justify-content: center; }
+            .facilities-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="#" class="logo-area">
+            <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+                <rect width="44" height="44" rx="10" fill="#15703f"/>
+                <path d="M22 10c-4 0-7 3-7 7 0 2 1 4 2.5 5.5L22 27l4.5-4.5C28 21 29 19 29 17c0-4-3-7-7-7z" fill="white" opacity="0.9"/>
+                <circle cx="22" cy="17" r="3" fill="#15703f"/>
+                <path d="M14 28c0-2 3.5-4 8-4s8 2 8 4v4H14v-4z" fill="white" opacity="0.7"/>
+                <rect x="20" y="13" width="4" height="1.5" rx="0.75" fill="#15703f"/>
+                <rect x="21.25" y="11.75" width="1.5" height="4" rx="0.75" fill="#15703f"/>
+            </svg>
+            <div class="logo-text">
+                <span class="logo-text-main">தாய் பவுண்டேஷன்</span>
+                <span class="logo-text-sub">THAAI FOUNDATION</span>
+            </div>
+        </a>
+        <nav class="nav-desktop">
+            <a href="#home">முகப்பு</a>
+            <a href="#about">எங்களைப் பற்றி</a>
+            <a href="#services">சேவைகள்</a>
+            <a href="#facilities">வசதிகள்</a>
+            <a href="#activities">செயல்பாடுகள்</a>
+            <a href="#awareness">விழிப்புணர்வு</a>
+            <a href="#contact">தொடர்பு</a>
+        </nav>
+        <div class="header-cta">
+            <a href="tel:6374111532" class="btn-call">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                அழைக்க
+            </a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()">முகப்பு</a>
+    <a href="#about" onclick="closeMobile()">எங்களைப் பற்றி</a>
+    <a href="#services" onclick="closeMobile()">சேவைகள்</a>
+    <a href="#facilities" onclick="closeMobile()">வசதிகள்</a>
+    <a href="#activities" onclick="closeMobile()">செயல்பாடுகள்</a>
+    <a href="#awareness" onclick="closeMobile()">விழிப்புணர்வு</a>
+    <a href="#faq" onclick="closeMobile()">கேள்விகள்</a>
+    <a href="#contact" onclick="closeMobile()">தொடர்பு</a>
+    <div class="mobile-cta">
+        <a href="tel:6374111532" class="btn-primary" style="justify-content:center;">📞 இப்போது அழைக்க</a>
+        <a href="#contact" class="btn-secondary" style="justify-content:center;" onclick="closeMobile()">✉ செய்தியனுப்பு</a>
+    </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                போதை மறுவாழ்வு மையம் • அருப்புக்கோட்டை
+            </div>
+            <h1>
+                <span class="highlight">தாய் பவுண்டேஷன்</span>
+            </h1>
+            <p class="hero-subtitle">மறுவாழ்விற்கான ஒரு புதிய பாதை</p>
+            <p class="hero-tagline">
+                மாற்றத்திற்கான முதல் படி ஒரு உதவி அழைப்பாக இருக்கலாம்.<br>
+                மீண்டும் ஒரு நம்பிக்கையான வாழ்க்கையை நோக்கி...
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    உதவி பெற தொடர்பு கொள்ளுங்கள்
+                </a>
+                <a href="tel:6374111532" class="btn-secondary">
+                    📞 இப்போது அழைக்க
+                </a>
+                <a href="#contact" class="btn-outline-purple">
+                    📍 இருப்பிடம் பார்க்க
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">29+</div>
+                    <div class="hero-stat-label">சேவை ஆண்டுகள்</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">100%</div>
+                    <div class="hero-stat-label">நம்பிக்கையான</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">24/7</div>
+                    <div class="hero-stat-label">உதவி கிடைக்கும்</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <svg class="hero-illustration" viewBox="0 0 480 400" fill="none">
+                <!-- Background shapes -->
+                <circle cx="240" cy="200" r="180" fill="#e6f7ed" opacity="0.5"/>
+                <circle cx="240" cy="200" r="140" fill="#e6f7ed" opacity="0.4"/>
+                <!-- Building -->
+                <rect x="140" y="140" width="200" height="160" rx="8" fill="#15703f" opacity="0.12"/>
+                <rect x="155" y="155" width="170" height="130" rx="6" fill="white"/>
+                <!-- Windows -->
+                <rect x="175" y="175" width="30" height="30" rx="4" fill="#e6f7ed"/>
+                <rect x="215" y="175" width="30" height="30" rx="4" fill="#e6f7ed"/>
+                <rect x="255" y="175" width="30" height="30" rx="4" fill="#e6f7ed"/>
+                <rect x="175" y="215" width="30" height="30" rx="4" fill="#e6f7ed"/>
+                <rect x="255" y="215" width="30" height="30" rx="4" fill="#e6f7ed"/>
+                <!-- Door -->
+                <rect x="215" y="235" width="30" height="50" rx="4" fill="#15703f" opacity="0.3"/>
+                <circle cx="240" cy="260" r="2" fill="#15703f"/>
+                <!-- Roof -->
+                <path d="M130 145 L240 90 L350 145" stroke="#15703f" stroke-width="3" fill="#15703f" opacity="0.15"/>
+                <!-- Cross on building -->
+                <rect x="233" y="100" width="14" height="4" rx="2" fill="#15703f" opacity="0.5"/>
+                <rect x="238" y="95" width="4" height="14" rx="2" fill="#15703f" opacity="0.5"/>
+                <!-- Trees -->
+                <circle cx="110" cy="260" r="25" fill="#22a85e" opacity="0.3"/>
+                <rect x="107" y="280" width="6" height="20" rx="3" fill="#15703f" opacity="0.2"/>
+                <circle cx="370" cy="255" r="30" fill="#22a85e" opacity="0.3"/>
+                <rect x="367" y="280" width="6" height="20" rx="3" fill="#15703f" opacity="0.2"/>
+                <!-- People silhouettes -->
+                <circle cx="190" cy="320" r="10" fill="#7c3aed" opacity="0.2"/>
+                <path d="M180 335 Q190 330 200 335 L198 360 L182 360 Z" fill="#7c3aed" opacity="0.15"/>
+                <circle cx="240" cy="315" r="12" fill="#15703f" opacity="0.25"/>
+                <path d="M228 332 Q240 326 252 332 L250 360 L230 360 Z" fill="#15703f" opacity="0.2"/>
+                <circle cx="290" cy="320" r="10" fill="#f59e0b" opacity="0.25"/>
+                <path d="M280 335 Q290 330 300 335 L298 360 L282 360 Z" fill="#f59e0b" opacity="0.2"/>
+                <!-- Hearts / care symbols -->
+                <path d="M350 120 C350 110 360 105 365 112 C370 105 380 110 380 120 C380 132 365 140 365 140 C365 140 350 132 350 120Z" fill="#f59e0b" opacity="0.2"/>
+                <path d="M100 150 C100 143 107 140 110 145 C113 140 120 143 120 150 C120 158 110 163 110 163 C110 163 100 158 100 150Z" fill="#7c3aed" opacity="0.15"/>
+                <!-- Ground -->
+                <ellipse cx="240" cy="370" rx="180" ry="12" fill="#22a85e" opacity="0.08"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about" id="about">
+    <div class="section-inner">
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <div class="section-label">எங்களைப் பற்றி</div>
+                <h2 class="section-title">நாங்கள் யார்?</h2>
+                <p>
+                    <strong>தாய் பவுண்டேஷன்</strong> என்பது அருப்புக்கோட்டையில் இயங்கும் ஒரு போதை மறுவாழ்வு மையம். போதைப் பழக்கத்தால் பாதிக்கப்பட்டவர்களுக்கு முழுமையான மறுவாழ்வு சேவையை வழங்குவதே எங்கள் நோக்கம்.
+                </p>
+                <p>
+                    "தாய்" என்ற பெயர் அன்பு, பாதுகாப்பு, மற்றும் பராமரிப்பின் அடையாளம். ஒருவர் போதைப் பழக்கத்திலிருந்து மீண்டு வர, அவருக்குத் தேவையான அனைத்து ஆதரவையும் அளிப்பதில் நாங்கள் உறுதியாக இருக்கிறோம்.
+                </p>
+                <div class="about-values">
+                    <div class="about-value">
+                        <div class="about-value-icon">🤝</div>
+                        <div>
+                            <h4>அன்பான பராமரிப்பு</h4>
+                            <p>ஒவ்வொரு நபரும் மதிப்புக்குரியவர்</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">🔒</div>
+                        <div>
+                            <h4>இரகசியத்தன்மை</h4>
+                            <p>முழு தனியுரிமை உறுதி</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">🌱</div>
+                        <div>
+                            <h4>முழுமையான மீட்பு</h4>
+                            <p>உடல், மனல், சமூக ஆதரவு</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">👨‍👩‍👧</div>
+                        <div>
+                            <h4>குடும்ப ஆதரவு</h4>
+                            <p>குடும்பத்துடன் இணைந்த சேவை</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual reveal">
+                <div class="about-card">
+                    <h3>🌿 எங்கள் அடிப்படை</h3>
+                    <p>
+                        போதைப் பழக்கம் என்பது ஒரு நோய். அதிலிருந்து மீள்வது சாத்தியம். சரியான வழிகாட்டல், பராமரிப்பு, மற்றும் குடும்ப ஆதரவு இருந்தால் எவரும் மீண்டு வர முடியும்.
+                    </p>
+                    <div class="mission-vision-cards">
+                        <div class="mv-card">
+                            <h4>🎯 நோக்கம்</h4>
+                            <p>போதைப் பழக்கத்தால் பாதிக்கப்பட்டவர்களுக்கு முழுமையான மறுவாழ்வு சேவை வழங்கி, அவர்களை சுதந்திரமான வாழ்க்கைக்கு கொண்டு வருவது.</p>
+                        </div>
+                        <div class="mv-card">
+                            <h4>👁 பார்வை</h4>
+                            <p>போதை இல்லா சமூகத்தை உருவாக்குவது. ஒவ்வொரு குடும்பத்திலும் நம்பிக்கையையும் ஆரோக்கியத்தையும் கொண்டு சேர்ப்பது.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services" id="services">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label">எங்கள் சேவைகள்</div>
+            <h2 class="section-title">நாங்கள் வழங்கும் சேவைகள்</h2>
+            <p class="section-desc">போதைப் பழக்கத்திலிருந்து மீள்வதற்கான முழுமையான சேவைகளை நாங்கள் வழங்குகிறோம்.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-num">01</div>
+                <div class="service-icon">🔍</div>
+                <h3>ஆரம்ப மதிப்பீடு</h3>
+                <p>போதைப் பழக்கத்தின் தன்மை மற்றும் அளவை புரிந்துகொண்டு, தனிப்பட்ட மறுவாழ்வு திட்டத்தை வகுத்தல்.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">02</div>
+                <div class="service-icon">🏥</div>
+                <h3>மறுவாழ்வு திட்டம்</h3>
+                <p>கட்டமைக்கப்பட்ட மறுவாழ்வு திட்டம் மூலம் போதைப் பழக்கத்திலிருந்து முழுமையான மீட்பு.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">03</div>
+                <div class="service-icon">💬</div>
+                <h3>ஆலோசனை</h3>
+                <p>தனிநபர் மற்றும் குழு ஆலோசனை மூலம் மனல் ரீதியான ஆதரவு மற்றும் வழிகாட்டல்.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">04</div>
+                <div class="service-icon">👨‍👩‍👧‍👦</div>
+                <h3>குடும்ப ஆதரவு</h3>
+                <p>குடும்ப உறுப்பினர்களுக்கு வழிகாட்டல் மற்றும் ஆலோசனை. குடும்ப மீட்புக்கும் உதவி.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">05</div>
+                <div class="service-icon">📢</div>
+                <h3>விழிப்புணர்வு நிகழ்ச்சிகள்</h3>
+                <p>பள்ளிகள், கல்லூரிகள் மற்றும் சமூகத்தில் போதை எதிர்ப்பு விழிப்புணர்வு நிகழ்ச்சிகள்.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">06</div>
+                <div class="service-icon">🔄</div>
+                <h3>தொடர் கண்காணிப்பு</h3>
+                <p>மறுவாழ்வுக்குப் பிறகு தொடர்ந்து கண்காணிப்பு மற்றும் ஆதரவு. மீண்டும் போதைக்கு ஆளாகாமல் தடுத்தல்.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== JOURNEY ===== -->
+<section class="section journey" id="journey">
+    <div class="section-inner">
+        <div class="reveal" style="text-align:center; margin-bottom:40px;">
+            <div class="section-label" style="justify-content:center;">மறுவாழ்வு பயணம்</div>
+            <h2 class="section-title">மீட்பின் பாதை</h2>
+            <p class="section-desc" style="margin-left:auto;margin-right:auto;">நீங்கள் தொடர்பு கொண்ட பிறகு என்ன நடக்கும் என்பதை இங்கே காணுங்கள்.</p>
+        </div>
+        <div class="journey-steps">
+            <div class="journey-step reveal">
+                <div class="journey-step-num">1</div>
+                <h4>தொடர்பு கொள்ளுங்கள்</h4>
+                <p>போன் அல்லது நேரில் வந்து எங்களிடம் உதவி கேளுங்கள்</p>
+            </div>
+            <div class="journey-step reveal">
+                <div class="journey-step-num">2</div>
+                <h4>மதிப்பீடு</h4>
+                <p>நிபுணர்கள் நிலையை மதிப்பீடு செய்து திட்டம் வகுப்பர்</p>
+            </div>
+            <div class="journey-step reveal">
+                <div class="journey-step-num">3</div>
+                <h4>சேர்க்கை</h4>
+                <p>மறுவாழ்வு திட்டத்தில் சேர்ந்து சிகிச்சை தொடங்கும்</p>
+            </div>
+            <div class="journey-step reveal">
+                <div class="journey-step-num">4</div>
+                <h4>மீட்பு ஆதரவு</h4>
+                <p>ஆலோசனை, மருத்துவ உதவி, மற்றும் மனல் ஆதரவு</p>
+            </div>
+            <div class="journey-step reveal">
+                <div class="journey-step-num">5</div>
+                <h4>குடும்ப வழிகாட்டல்</h4>
+                <p>குடும்பத்தினருக்கு ஆலோசனை மற்றும் பயிற்சி</p>
+            </div>
+            <div class="journey-step reveal">
+                <div class="journey-step-num">6</div>
+                <h4>தொடர் கண்காணிப்பு</h4>
+                <p>வீடு திரும்பிய பிறகும் தொடர்ந்து ஆதரவு</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FACILITIES ===== -->
+<section class="section facilities" id="facilities">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label">எங்கள் மையம்</div>
+            <h2 class="section-title">மைய வசதிகள்</h2>
+            <p class="section-desc">நோயாளிகளின் வசதி மற்றும் ஆறுதலுக்காக அனைத்து அடிப்படை வசதிகளும் உள்ளன.</p>
+        </div>
+        <div class="facilities-grid">
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-1">🏠</div>
+                <div class="facility-info">
+                    <h4>தங்கும் அறைகள்</h4>
+                    <p>சுத்தமான, வசதியான அறைகள்</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-2">💬</div>
+                <div class="facility-info">
+                    <h4>ஆலோசனை அறை</h4>
+                    <p>தனிப்பட்ட ஆலோசனைக்கு</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-3">🍽</div>
+                <div class="facility-info">
+                    <h4>உணவு அறை</h4>
+                    <p>சத்துள்ள உணவு வழங்கப்படும்</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-4">🧘</div>
+                <div class="facility-info">
+                    <h4>யோகா / தியானம்</h4>
+                    <p>மன அமைதிக்கான இடம்</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-5">🏃</div>
+                <div class="facility-info">
+                    <h4>விளையாட்டு மைதானம்</h4>
+                    <p>உடற்பயிற்சி மற்றும் விளையாட்டு</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-6">📚</div>
+                <div class="facility-info">
+                    <h4>நூலகம்</h4>
+                    <p>படிப்பு மற்றும் அறிவு வளர்ச்சி</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-7">🕌</div>
+                <div class="facility-info">
+                    <h4>பிரார்த்தனை அறை</h4>
+                    <p>ஆன்மீக ஆதரவுக்கு</p>
+                </div>
+            </div>
+            <div class="facility-card reveal">
+                <div class="facility-img facility-img-8">🌳</div>
+                <div class="facility-info">
+                    <h4>வெளிப்புற பகுதி</h4>
+                    <p>நடக்க மற்றும் ஓய்வெடுக்க</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ACTIVITIES ===== -->
+<section class="section activities" id="activities">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label">எங்கள் செயல்பாடுகள்</div>
+            <h2 class="section-title">சமூக சேவை & செயல்பாடுகள்</h2>
+            <p class="section-desc">மறுவாழ்வு மட்டுமல்லாமல், சமூக விழிப்புணர்வு மற்றும் பல்வேறு சேவைகளிலும் ஈடுபட்டு வருகிறோம்.</p>
+        </div>
+        <div class="activities-grid">
+            <div class="activity-card reveal">
+                <div class="activity-img activity-img-a1">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="30" r="12" fill="#15703f" opacity="0.3"/>
+                        <path d="M25 55 Q40 45 55 55 L52 70 L28 70 Z" fill="#15703f" opacity="0.2"/>
+                        <circle cx="25" cy="35" r="8" fill="#22a85e" opacity="0.2"/>
+                        <circle cx="55" cy="35" r="8" fill="#22a85e" opacity="0.2"/>
+                        <path d="M15 58 Q25 50 35 58" stroke="#22a85e" stroke-width="2" fill="none" opacity="0.3"/>
+                        <path d="M45 58 Q55 50 65 58" stroke="#22a85e" stroke-width="2" fill="none" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="activity-body">
+                    <span class="activity-tag">விழிப்புணர்வு</span>
+                    <h3>பள்ளி விழிப்புணர்வு நிகழ்ச்சி</h3>
+                    <p>மாணவர்களிடையே போதைப் பழக்கத்தின் தீமைகள் குறித்த விழிப்புணர்வு நிகழ்ச்சிகள் நடத்துதல்.</p>
+                </div>
+            </div>
+            <div class="activity-card reveal">
+                <div class="activity-img activity-img-a2">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <rect x="20" y="20" width="40" height="40" rx="8" fill="#7c3aed" opacity="0.15"/>
+                        <path d="M35 35 L40 30 L45 35 L40 40 Z" fill="#7c3aed" opacity="0.3"/>
+                        <circle cx="40" cy="50" r="6" fill="#7c3aed" opacity="0.2"/>
+                        <path d="M30 55 Q40 48 50 55" stroke="#7c3aed" stroke-width="2" fill="none" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="activity-body">
+                    <span class="activity-tag" style="background:var(--purple-100);color:var(--purple-700);">சமூக சேவை</span>
+                    <h3>சமூக விழிப்புணர்வு முகாம்</h3>
+                    <p>கிராமங்கள் மற்றும் நகரங்களில் போதை எதிர்ப்பு விழிப்புணர்வு முகாம்கள் நடத்துதல்.</p>
+                </div>
+            </div>
+            <div class="activity-card reveal">
+                <div class="activity-img activity-img-a3">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="25" fill="#f59e0b" opacity="0.1"/>
+                        <path d="M30 45 C30 35 35 30 40 30 C45 30 50 35 50 45" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.4"/>
+                        <circle cx="35" cy="38" r="3" fill="#f59e0b" opacity="0.3"/>
+                        <circle cx="45" cy="38" r="3" fill="#f59e0b" opacity="0.3"/>
+                        <path d="M36 46 Q40 50 44 46" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.4"/>
+                    </svg>
+                </div>
+                <div class="activity-body">
+                    <span class="activity-tag" style="background:var(--orange-100);color:#b45309;">மறுவாழ்வு</span>
+                    <h3>யோகா & தியானம்</h3>
+                    <p>மறுவாழ்வில் உள்ள நபர்களுக்கு யோகா, தியானம் மற்றும் உடற்பயிற்சி வகுப்புகள்.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY TRUST ===== -->
+<section class="section trust">
+    <div class="section-inner">
+        <div class="reveal" style="text-align:center; margin-bottom:40px;">
+            <div class="section-label" style="justify-content:center;">எங்கள் மையத்தைப் பற்றி</div>
+            <h2 class="section-title">ஏன் தாய் பவுண்டேஷன்?</h2>
+            <p class="section-desc" style="margin-left:auto;margin-right:auto;">குடும்பங்கள் எங்களை நம்புவதற்கான காரணங்கள்.</p>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-card reveal">
+                <div class="trust-card-icon">📋</div>
+                <h4>பதிவு செய்யப்பட்ட நிறுவனம்</h4>
+                <p>முறையாக பதிவு செய்யப்பட்ட சமூக சேவை நிறுவனம். Reg. No. 53/2025</p>
+            </div>
+            <div class="trust-card reveal">
+                <div class="trust-card-icon">🔒</div>
+                <h4>இரகசிய விசாரணை</h4>
+                <p>உங்கள் விசாரணை முழுமையாக இரகசியமாக கையாளப்படும். தனியுரிமை உத்தரவாதம்.</p>
+            </div>
+            <div class="trust-card reveal">
+                <div class="trust-card-icon">📐</div>
+                <h4>கட்டமைக்கப்பட்ட திட்டம்</h4>
+                <p>அறிவியல் பூர்வமான, கட்டமைக்கப்பட்ட மறுவாழ்வு திட்டம். தனிப்பட்ட கவனிப்பு.</p>
+            </div>
+            <div class="trust-card reveal">
+                <div class="trust-card-icon">👨‍👩‍👧</div>
+                <h4>குடும்ப ஆதரவு</h4>
+                <p>குடும்பத்தினருக்கு ஆலோசனை மற்றும் வழிகாட்டல். குடும்பம் ஒரு تیمாக மீட்பு.</p>
+            </div>
+            <div class="trust-card reveal">
+                <div class="trust-card-icon">🌿</div>
+                <h4>அனுபவமான குழு</h4>
+                <p>போதை மறுவாழ்வில் அனுபவம் வாய்ந்த நிபுணர்கள் மற்றும் பராமரிப்பு குழு.</p>
+            </div>
+            <div class="trust-card reveal">
+                <div class="trust-card-icon">🔄</div>
+                <h4>தொடர் ஆதரவு</h4>
+                <p>மறுவாழ்வுக்குப் பிறகும் தொடர்ந்து கண்காணிப்பு மற்றும் ஆதரவு வழங்கப்படும்.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== AWARENESS ===== -->
+<section class="section awareness" id="awareness">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label">விழிப்புணர்வு</div>
+            <h2 class="section-title">அறிந்து கொள்ளுங்கள்</h2>
+            <p class="section-desc">போதைப் பழக்கம் மற்றும் மறுவாழ்வு குறித்த முக்கிய தகவல்கள்.</p>
+        </div>
+        <div class="awareness-grid">
+            <div class="awareness-card reveal">
+                <div class="awareness-icon awareness-icon-1">⚠️</div>
+                <div>
+                    <h3>போதைப் பழக்கத்தின் அறிகுறிகள்</h3>
+                    <p>நடத்தை மாற்றம், உடல்நிலை மாற்றம், சமூக விலகல், பணப் பிரச்சனை போன்ற அறிகுறிகளை அறிந்துகொள்ளுங்கள்.</p>
+                </div>
+            </div>
+            <div class="awareness-card reveal">
+                <div class="awareness-icon awareness-icon-2">🤝</div>
+                <div>
+                    <h3>குடும்பத்தினர் எப்படி உதவலாம்?</h3>
+                    <p>அன்புடன் அணுகுதல், குற்றம் சாட்டாமல் பேசுதல், நிபுணர் உதவி நாடுதல் ஆகியவை முக்கியம்.</p>
+                </div>
+            </div>
+            <div class="awareness-card reveal">
+                <div class="awareness-icon awareness-icon-3">❌</div>
+                <div>
+                    <h3>பொதுவான தவறான நம்பிக்கைகள்</h3>
+                    <p>"போதை என்பது பழக்கம் மட்டுமே" - இல்லை, இது ஒரு நோய். மருத்துவ உதவியுடன் மீள முடியும்.</p>
+                </div>
+            </div>
+            <div class="awareness-card reveal">
+                <div class="awareness-icon awareness-icon-4">💚</div>
+                <div>
+                    <h3>மீட்புக்குப் பிறகு குடும்ப ஆதரவு</h3>
+                    <p>மறுவாழ்வுக்குப் பிறகு குடும்பத்தின் ஆதரவு மிகவும் முக்கியம். பொறுமை, புரிதல், ஊக்கம் ஆகியவை தேவை.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq" id="faq">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label">அடிக்கடி கேட்கப்படும் கேள்விகள்</div>
+            <h2 class="section-title">FAQ</h2>
+            <p class="section-desc">உங்கள் சந்தேகங்களுக்கு இங்கே பதில்கள்.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    மறுவாழ்வு சிகிச்சை எவ்வளவு காலம் நீடிக்கும்?
+                    <span class="faq-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        ஒவ்வொரு நபரின் நிலையும் வேறுபடும். பொதுவாக மறுவாழ்வு திட்டம் 3 மாதங்கள் முதல் 6 மாதங்கள் வரை இருக்கலாம். ஆரம்ப மதிப்பீட்டின் அடிப்படையில் தனிப்பட்ட கால அளவு நிர்ணயிக்கப்படும்.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    எங்கள் விசாரணை இரகசியமாக இருக்குமா?
+                    <span class="faq-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        ஆம், உங்கள் அனைத்து தகவல்களும் முழுமையாக இரகசியமாக வைக்கப்படும். நாங்கள் தனியுரிமையை மிகவும் முக்கியமாக கருதுகிறோம்.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    குடும்பத்தினர் பார்க்க வர முடியுமா?
+                    <span class="faq-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        ஆம், குறிப்பிட்ட நாட்களில் குடும்பத்தினர் சந்திக்கலாம். மேலும் குடும்ப ஆலோசனை அமர்வுகளும் நடத்தப்படும். விவரங்களுக்கு எங்களை தொடர்பு கொள்ளுங்கள்.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    சேர்க்கை கட்டணம் எவ்வளவு?
+                    <span class="faq-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        கட்டண விவரங்களுக்கு நேரடியாக எங்களை தொடர்பு கொள்ளுங்கள். ஒவ்வொரு நபரின் தேவைக்கும் ஏற்ப திட்டம் மாறுபடும். முதல் ஆலோசனை இலவசம்.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    மறுவாழ்வுக்குப் பிறகு தொடர்ந்து ஆதரவு கிடைக்குமா?
+                    <span class="faq-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        ஆம், மறுவாழ்வு முடிந்த பிறகும் தொடர் கண்காணிப்பு மற்றும் ஆதரவு வழங்கப்படும். மீண்டும் போதைக்கு ஆளாகாமல் இருக்க follow-up அமர்வுகள் நடத்தப்படும்.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    எங்களை எப்படி தொடர்பு கொள்வது?
+                    <span class="faq-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        📞 6374111532 / 9345120512 என்ற எண்களில் அழைக்கலாம். அல்லது இந்த இணையதளத்தில் உள்ள தொடர்பு படிவத்தை பயன்படுத்தலாம். நேரடியாக மையத்திற்கும் வரலாம்.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact" id="contact">
+    <div class="section-inner">
+        <div class="reveal" style="text-align:center; margin-bottom:40px;">
+            <div class="section-label" style="justify-content:center;">தொடர்பு கொள்ளுங்கள்</div>
+            <h2 class="section-title">உதவி பெற தொடர்பு கொள்ளுங்கள்</h2>
+            <p class="section-desc" style="margin-left:auto;margin-right:auto;">நாங்கள் உங்களுக்கு உதவ தயாராக இருக்கிறோம். முதல் படி இன்று தொடங்குங்கள்.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-cards reveal">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📍</div>
+                    <div>
+                        <h4>மைய முகவரி</h4>
+                        <p>
+                            5[1], 58, நெசவாளர் காலனி,<br>
+                            அன்புநகர் 3-வது தெரு,<br>
+                            அருப்புக்கோட்டை – 626 101<br>
+                            விருதுநகர் மாவட்டம்
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">📞</div>
+                    <div>
+                        <h4>தொலைபேசி எண்கள்</h4>
+                        <p>
+                            <a href="tel:6374111532">📱 6374111532</a><br>
+                            <a href="tel:9345120512">📱 9345120512</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">🕐</div>
+                    <div>
+                        <h4>நேரம்</h4>
+                        <p>
+                            திங்கள் - சனி: காலை 9:00 - மாலை 6:00<br>
+                            ஞாயிறு: அவசர உதவி மட்டும்
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">🌐</div>
+                    <div>
+                        <h4>Instagram</h4>
+                        <p><a href="https://instagram.com/thai.foundation.apk" target="_blank" rel="noopener">@thai.foundation.apk</a></p>
+                    </div>
+                </div>
+                <a href="https://maps.google.com/?q=Aruppukkottai+626101" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center; margin-top:8px;">
+                    📍 வழிகாட்டல் பெறு (Google Maps)
+                </a>
+            </div>
+            <div class="contact-form reveal" id="contactForm">
+                <h3>✉ விசாரணை படிவம்</h3>
+                <p class="form-desc">உங்கள் தகவலை இங்கே பதிவு செய்யுங்கள். நாங்கள் விரைவில் தொடர்பு கொள்வோம்.</p>
+                <form id="enquiryForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">பெயர் *</label>
+                        <input type="text" id="name" name="name" placeholder="உங்கள் பெயர்" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">தொலைபேசி எண் *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="10 இலக்க எண்" required pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-group">
+                        <label for="relation">உறவு முறை</label>
+                        <select id="relation" name="relation">
+                            <option value="">தேர்வு செய்யவும்</option>
+                            <option value="self">சொந்தமாக</option>
+                            <option value="parent">பெற்றோர்</option>
+                            <option value="spouse">துணை</option>
+                            <option value="sibling">சகோதரர்/சகோதரி</option>
+                            <option value="child">மகன்/மகள்</option>
+                            <option value="friend">நண்பர்</option>
+                            <option value="other">மற்றவை</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">செய்தி</label>
+                        <textarea id="message" name="message" placeholder="உங்கள் செய்தியை இங்கே எழுதுங்கள்..."></textarea>
+                    </div>
+                    <div class="form-privacy">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22a85e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <span>உங்கள் தகவல் முழுமையாக இரகசியமாக வைக்கப்படும். உங்கள் விசாரணை நம்பிக்கையுடன் கையாளப்படும்.</span>
+                    </div>
+                    <button type="submit" class="btn-submit">விசாரணை அனுப்பு</button>
+                </form>
+                <div class="form-success" id="formSuccess">
+                    <div class="check-circle">✓</div>
+                    <h3>நன்றி!</h3>
+                    <p>உங்கள் விசாரணை பெறப்பட்டது. நாங்கள் விரைவில் தொடர்பு கொள்வோம்.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<div class="map-section">
+    <div class="map-inner">
+        <div class="map-container">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.5!2d78.1!3d9.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zAruppukkottai!5e0!3m2!1sen!2sin!4v1"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Thaai Foundation Location">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                    <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+                        <rect width="44" height="44" rx="10" fill="rgba(255,255,255,0.15)"/>
+                        <path d="M22 10c-4 0-7 3-7 7 0 2 1 4 2.5 5.5L22 27l4.5-4.5C28 21 29 19 29 17c0-4-3-7-7-7z" fill="white" opacity="0.9"/>
+                        <circle cx="22" cy="17" r="3" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M14 28c0-2 3.5-4 8-4s8 2 8 4v4H14v-4z" fill="white" opacity="0.5"/>
+                    </svg>
+                    <div>
+                        <div style="font-weight:700;font-size:16px;">தாய் பவுண்டேஷன்</div>
+                        <div style="font-size:11px;opacity:0.6;">THAAI FOUNDATION</div>
+                    </div>
+                </div>
+                <p>போதை மறுவாழ்வு மையம்<br>மீண்டும் ஒரு நம்பிக்கையான வாழ்க்கையை நோக்கி...</p>
+            </div>
+            <div>
+                <h4>இணைப்புகள்</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">முகப்பு</a></li>
+                    <li><a href="#about">எங்களைப் பற்றி</a></li>
+                    <li><a href="#services">சேவைகள்</a></li>
+                    <li><a href="#facilities">வசதிகள்</a></li>
+                    <li><a href="#activities">செயல்பாடுகள்</a></li>
+                    <li><a href="#contact">தொடர்பு</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>சேவைகள்</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">மறுவாழ்வு திட்டம்</a></li>
+                    <li><a href="#services">ஆலோசனை</a></li>
+                    <li><a href="#services">குடும்ப ஆதரவு</a></li>
+                    <li><a href="#services">விழிப்புணர்வு</a></li>
+                    <li><a href="#services">தொடர் கண்காணிப்பு</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>தொடர்பு</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:6374111532">📞 6374111532</a></li>
+                    <li><a href="tel:9345120512">📞 9345120512</a></li>
+                    <li><a href="https://instagram.com/thai.foundation.apk" target="_blank" rel="noopener">📷 Instagram</a></li>
+                    <li><a href="#contact">📍 அருப்புக்கோட்டை</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 தாய் பவுண்டேஷன். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+            <div class="footer-reg">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Reg. No. 53/2025
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== MOBILE STICKY CTA ===== -->
+<div class="mobile-sticky">
+    <div class="mobile-sticky-inner">
+        <a href="tel:6374111532" class="mobile-sticky-btn msb-call">
+            📞 அழைக்க
+        </a>
+        <a href="https://wa.me/916374111532" target="_blank" rel="noopener" class="mobile-sticky-btn msb-whatsapp">
+            💬 WhatsApp
+        </a>
+        <a href="https://maps.google.com/?q=Aruppukkottai+626101" target="_blank" rel="noopener" class="mobile-sticky-btn msb-map">
+            📍 வழி
+        </a>
+    </div>
+</div>
+
+<script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    hamburgerBtn.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('active', menuOpen);
+        const spans = hamburgerBtn.querySelectorAll('span');
+        if (menuOpen) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+        }
+    });
+
+    function closeMobile() {
+        menuOpen = false;
+        mobileMenu.classList.remove('active');
+        const spans = hamburgerBtn.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+    }
+
+    // FAQ
+    function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(fi => {
+            fi.classList.remove('active');
+            fi.querySelector('.faq-answer').style.maxHeight = '0';
+        });
+
+        // Open clicked if wasn't active
+        if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    }
+
+    // Form submission
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('enquiryForm');
+        const success = document.getElementById('formSuccess');
+        form.style.display = 'none';
+        success.classList.add('show');
+    }
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 80);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
