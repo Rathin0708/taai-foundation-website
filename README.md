@@ -23,7 +23,7 @@ npx serve .
 
 Deployed on [Vercel](https://vercel.com).
 
-**Live site:** _pending deployment_
+**Live site:** [https://taai-foundation-website.vercel.app](https://taai-foundation-website.vercel.app)
 
 ## License
 
